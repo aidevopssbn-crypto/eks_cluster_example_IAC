@@ -1,58 +1,36 @@
-# Terraform Configuration for AWS EKS Cluster
-This Terraform configuration creates an AWS EKS Cluster with a managed node group, along with the necessary networking components.
+# Getting Started with Terraform Configuration for Amazon EKS Cluster
+This repository contains Terraform configuration files to create an Amazon EKS Cluster with necessary networking components and node groups.
 
-## Step 1: Prerequisites
-* Install Terraform
-* Configure AWS credentials
+## Prerequisites
+* Terraform installed on your machine
+* AWS account with necessary permissions
 
-## Step 2: Create Terraform Configuration Files
-Create the following files:
-* `main.tf`: defines the resources to be created
-* `variables.tf`: defines the input variables
-* `output.tf`: defines the output values
+## Step-by-Step Instructions
+1. Clone the repository to your local machine.
+2. Navigate to the repository directory.
+3. Initialize the Terraform working directory by running `terraform init`.
+4. Review and update the `variables.tf` file if necessary.
+5. Apply the Terraform configuration by running `terraform apply`.
+6. Verify the resources created in your AWS account.
 
-## Step 3: Define Input Variables
-In `variables.tf`, define the input variables:
-* AWS region
-* VPC CIDR
-* Public subnet CIDRs
-* EKS cluster name
-* Node group name
+## Terraform Configuration Files
+* `main.tf`: Defines the main resources, including VPC, subnets, internet gateway, route table, security group, EKS cluster, and node group.
+* `variables.tf`: Defines the input variables for the Terraform configuration.
+* `output.tf`: Defines the output values, including EKS cluster name, endpoint, ARN, node group name, VPC ID, and subnet IDs.
 
-## Step 4: Create VPC and Networking Components
-In `main.tf`, create:
+## Resources Created
 * VPC
-* Public subnets
 * Internet Gateway
+* Public Subnets (2)
 * Route Table
-* Route Table Associations
+* Security Group
+* EKS Cluster
+* Node Group
 
-## Step 5: Create EKS Cluster
-In `main.tf`, create:
-* EKS cluster
-* EKS cluster IAM role
-* Managed node group
-
-## Step 6: Configure Security Group
-In `main.tf`, create:
-* Security group
-* Inbound rules for EKS API and Kubelet
-* Outbound rule for all ports
-
-## Step 7: Output Values
-In `output.tf`, define the output values:
-* EKS cluster name
-* EKS cluster endpoint
-* EKS cluster ARN
-* Node group name
+## Output Values
+* EKS Cluster Name
+* EKS Cluster Endpoint
+* EKS Cluster ARN
+* Node Group Name
 * VPC ID
 * Subnet IDs
-
-## Step 8: Apply Terraform Configuration
-Run `terraform apply` to create the resources
-
-## Example Usage
-* Clone the repository
-* Update the input variables in `variables.tf`
-* Run `terraform apply` to create the resources
-* Verify the output values in the Terraform output
